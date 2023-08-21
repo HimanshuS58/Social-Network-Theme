@@ -17,12 +17,12 @@ body {
 }
 
 a {
-    text-decoration: none;  // underline
+    text-decoration: none;  
     color: $primary-color;
 }
 
 ul {
-    list-style: none;  //disc shaped  
+    list-style: none;   
 }
 
 img {
@@ -63,7 +63,7 @@ img {
 
 .landing {
     position: relative;
-    background: url('image/showcase.jpg') no-repeat center center/cover;  
+    background: url('scss/image/showcase.jpg') no-repeat center center/cover;  
     height: 100vh;  
     
     &-inner {
