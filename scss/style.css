@@ -354,7 +354,7 @@ img {
 
 .landing {
   position: relative;
-  background: url("image/showcase.jpg") no-repeat center center/cover;
+  background: url("scss/image/showcase.jpg") no-repeat center center/cover;
   height: 100vh;
 }
 .landing-inner {
