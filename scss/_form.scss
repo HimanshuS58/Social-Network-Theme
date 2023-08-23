@@ -26,7 +26,8 @@
     // for create-profile.html
     // submit button
     input[type='submit'] {
-        font: inherit;     
+        font: inherit;     // The inherit option means it will receive the body's font family.
+                           // The inherit keyword specifies that a property should inherit its value from its parent element.
     }
       .social-input {
         display: flex;
