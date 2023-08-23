@@ -15,7 +15,7 @@
    margin-bottom: 1rem;
 }
 
-.large {             
+.large {              // no class of this name don't no why it is used and we can remove it.
    font-size: 3rem;
    line-height: 1.2;
    margin-bottom: 1rem;
@@ -99,7 +99,7 @@
 .badge {
    font-size: 0.8rem;
    padding: 0.1rem;
-   text-align: center;  
+   text-align: center;  // center of left-center-right
    margin: 0.3rem;
    background: $light-color;
    color: #333;
@@ -122,12 +122,13 @@
 }
 
 .dark-overlay {
-   height: 100%;    
+   height: 100%;    // by putting height value the entire text under "dark-overlay" class comes in center of the page.
+                    // try to remove the height property and see the difference.
    width: 100%;
-   position: absolute; 
-   top: 0;              
-   left: 0;            
-   background-color: rgba(0,0,0, 0.7);  
+   position: absolute;  // no effect here but used as a good practice or maybe if we add something else then this class position doesn't get affected.
+   top: 0;              // no effect resaon is same as above 
+   left: 0;             // no effect resaon is same as above
+   background-color: rgba(0,0,0, 0.7);  // only for giving a light background to the webpage we are using dark-overlay class otherwise it is of no use.
 
 }
 
@@ -150,13 +151,19 @@
    color: #333;
    padding: 0rem 0.7rem; 
    margin-right: 0.5rem;
-   border: none;  
-   cursor: pointer; 
-   font-size: 1rem; 
+   border: none;  // no use
+   cursor: pointer; // default(also no use)---> gives a hand shape when you hover the button which is default.
+   font-size: 1rem;  // default
 
-   outline: none;    
+   outline: none;    // An outline is a line that is drawn around elements, OUTSIDE the borders, to make the element "stand out".
+                     // CSS has the following outline properties:
+                     //        (a) outline-style
+                     //        (b) outline-color
+                     //        (c) outline-width
+                     //        (d) outline-offset
+                     //        (e) outline
 
-   transition: all 0.2s ease-in; 
+   transition: all 0.2s ease-in; // we can ignore "all" value here but writing it is a good practice
 
 &.btn-primary {
    @include set-background($primary-color);
