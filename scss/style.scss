@@ -10,19 +10,20 @@
 
 body {
     font-family: 'Raleway', 'sans-serif';
-    font-size: 1rem;  
+    font-size: 1rem;  // rem is the default size of the html text(which is 16px)
+                      // so 1rem = 16px(default)
     line-height: 1.6;
     background-color: #fff;
     color: #333;
 }
 
 a {
-    text-decoration: none;  
+    text-decoration: none;  // underline
     color: $primary-color;
 }
 
 ul {
-    list-style: none;   
+    list-style: none;  //disc shaped  
 }
 
 img {
@@ -38,7 +39,8 @@ img {
     justify-content: space-between; 
     padding: 0.7rem 2rem;
     position: fixed;
-    z-index: 1;    
+    z-index: 1;    // so that the navbar is front of the image all the time
+                   // if it's -1(or 0) then the the navbar is behind the image 
     width: 100%;
     top: 0;
     border-bottom: solid 1px $primary-color;
@@ -49,7 +51,8 @@ img {
     }
 
     a {
-        color: #fff;      
+        color: #fff;      // here we have to mention the color of the link as the use of @function
+                           // and @mixin doesn't work on the link text color
         padding: 0.45rem;
         margin: 0 0.25rem;
 
@@ -63,8 +66,14 @@ img {
 
 .landing {
     position: relative;
-    background: url('scss/image/showcase.jpg') no-repeat center center/cover;  
-    height: 100vh;  
+    background: url('image/showcase.jpg') no-repeat center center/cover;  // here no-repeat is of no use because no-repeat is used when the image size is smaller and it repeat itself to cover the remaining space.
+                                                                          // center is used to focus the image at center.
+                                                                          // here first center is of no use, you can remove it also.
+                                                                          // center/cover is used so that the image is placed at center and at the same time it cover the whole image i.e no part of the image should be left behind.
+
+    height: 100vh;  // viewport-height(vh) is used for the entire height of the webpage
+                    // Setting it 100vh means that the image cover the entire webpage
+
     
     &-inner {
         color: #fff;
@@ -84,7 +93,7 @@ img {
     display: grid;
     grid-template-columns: 2fr 4fr 2fr;
     grid-gap: 2rem;
-    align-items: center; 
+    align-items: center; // align the items in center of column(column for grid) i.e center of top-center-bottom
     padding: 1rem;
     line-height: 1.8;
     margin-bottom: 1rem;
@@ -95,20 +104,22 @@ img {
     display: grid;
     grid-template-areas: 
     'top top'
-    'about about'  
+    'about about'  // you can name them anything
     'exp edu'
     'github github';
 
     grid-gap: 1rem;
 
     .profile-top {
-        grid-area: top;  
+        grid-area: top;  // grid-area value name should be same as that of grid-template-areas
         display: flex;
         flex-direction: column;
-        align-items: center;     
+        align-items: center;      // works on cross-axis of flex-direction 
+                                  // aign the item in center of row(row for flex) i.e center of left-center-bottom
 
-        justify-content: center;  
-        text-align: center;      
+        justify-content: center;  //  works on main-axis of flex-direction
+                                  //  no effect of justify-content in this case, don't know why using it 
+        text-align: center;       //  no effect of text-align in this case, don't know why using it 
 
         img {
             width: 250px;
@@ -125,28 +136,28 @@ img {
     }
 
     .profile-about {
-        grid-area: about;  
-        text-align: center; 
+        grid-area: about;  // grid-area value name should be same as that of grid-template-areas
+        text-align: center; // center of left-center-bottom
 
         .skills {
             display: flex;
             justify-content: center;
-            align-items: center;  
-            text-align: center;   
+            align-items: center;  // no effect of align-items in this case, don't know why using it 
+            text-align: center;   // // no effect of text-align also in this case, don't know why using it
         }
     }
 
     .profile-exp {
-        grid-area: exp;  
+        grid-area: exp;  // grid-area value name should be same as that of grid-template-areas
     }
 
     .profile-edu {
-        grid-area: edu;  
+        grid-area: edu;  // grid-area value name should be same as that of grid-template-areas
     }
 
     .profile-exp,
     .profile-edu {
-        & > div {  
+        & > div {  // for all the div of both classes as they have no separate class name for there div 
              margin-bottom: 1rem;
              padding-bottom: 1rem;
              border-bottom: #ccc 1px dotted;
@@ -162,18 +173,19 @@ img {
     }
 
     .profile-github {
-        grid-area: github;           
+        grid-area: github;            // grid-area value name should be same as that of grid-template-areas
+
         .repo {
             display: flex;  
 
             & > div:first-child {
-                 flex: 7;             
+                 flex: 7;              // combo of flex-grow, flex-shrink & flex-basis
                            
                  flex-basis: 70%; 
             }
 
             & > div:last-child {
-                flex: 3;               
+                flex: 3;               // combo of flex-grow, flex-shrink & flex-basis
                 flex-basis: 20%;
             }
         }
