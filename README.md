@@ -1,2 +1,2 @@
 # URL
-https://himanshus58.github.io/Social-Network-Theme/scss/
+https://himanshus58.github.io/devconnector_theme_sass/scss/
